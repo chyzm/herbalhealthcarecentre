@@ -6,6 +6,7 @@
     <title>Herbal Healthcare Centre </title>
     <link rel="stylesheet" href="/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -30,19 +31,25 @@
     <section id="home" class="hero">
         <div class="slider">
             <div class="slide active" style="background-image: url('/img/hero-img-1.avif'); height: 100%;">
-                <h1>Revolutionary Breakthrough: The Ultimate Natural Cancer Solution</h1>
-                <p>Harnessing the power of nature’s finest herbs to combat cancer effectively.</p>
-                <a href="/products" class="btn">Buy Now</a>
+                <div class="text-container" style="background-color: rgba(47, 28, 106, 0.85); padding: 2rem; border-radius: 8px; max-width: 800px; margin: 0 auto;">
+                    <h1>The Ultimate Natural Cancer Solution</h1>
+                    <p>Harnessing the power of nature's finest herbs to combat cancer effectively.</p>
+                    <a href="/products" class="btn">Buy Now</a>
+                </div>
             </div>
-            <div class="slide" style="background-image: url('/img/hero-img-2.png');">
-                <h1>100% Natural Herbal Healthcare</h1>
-                <p>Blending ancient wisdom with modern science for a healthier you.</p>
-                <a href="/products" class="btn">Buy Now</a>
+            <div class="slide" style="background-image: url('/img/hero-img-2.png'); height: 100%;">
+                <div class="text-container" style="background-color: rgba(47, 28, 106, 0.85); padding: 2rem; border-radius: 8px; max-width: 800px; margin: 0 auto;">
+                    <h1>100% Natural Herbal Healthcare</h1>
+                    <p>Blending ancient wisdom with modern science for a healthier you.</p>
+                    <a href="/products" class="btn">Buy Now</a>
+                </div>
             </div>
-            <div class="slide" style="background-image: url('../assets/hero3.jpg');">
-                <h1>Discover the Healing Power of Herbs</h1>
-                <p>Experience nature’s most potent remedies for overall well-being.</p>
-                <a href="/products" class="btn">Buy Now</a>
+            <div class="slide" style="background-image: url('../assets/hero3.jpg'); height: 100%;">
+                <div class="text-container" style="background-color: rgba(47, 28, 106, 0.85); padding: 2rem; border-radius: 8px; max-width: 800px; margin: 0 auto;">
+                    <h1>Discover the Healing Power of Herbs</h1>
+                    <p>Experience nature's most potent remedies for overall well-being.</p>
+                    <a href="/products" class="btn">Buy Now</a>
+                </div>
             </div>
         </div>
     </section>
@@ -463,11 +470,70 @@
 </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
+<footer>
+    <div class="container">
+        <div class="footer-columns">
+            <!-- Contact Column -->
+            <div class="footer-col">
+                <h3 class="footer-heading">Contact Us</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                        <span class="contact-text">+254752198022</span>
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        <span class="contact-text">herbalhealthcarecentre@yahoo.com</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Social Media Column -->
+            <div class="footer-col">
+                <h3 class="footer-heading">Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="X (Twitter)"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <div class="footer-bottom">
             <p>&copy; 2024 Herbal Healthcare Centre. All rights reserved.</p>
         </div>
-    </footer>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize slider
+        const slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+        
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            // Show current slide
+            slides[index].classList.add('active');
+        }
+        
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+        
+        // Auto-rotate every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Show first slide initially
+        showSlide(0);
+    });
+</script>
+
 
     <!-- JavaScript -->
     <script src="/js/main.js"></script>

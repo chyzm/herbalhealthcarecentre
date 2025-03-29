@@ -113,6 +113,8 @@ nav a:hover {
 
 }
 
+
+
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -183,6 +185,16 @@ header .container {
     .hero h1 {
         font-size: 1.8rem;
     }
+
+    
+    @media (max-width: 768px) {
+        .text-container {
+            padding: 1rem !important;
+            max-width: 90% !important;
+            margin-top: 80px !important;
+        }
+    }
+    
 }
 
 /* Mobile Menu Styles */
@@ -236,18 +248,17 @@ header .container {
         top: 1rem;
         right: 1rem;
     }
+
 }
 
 
 
 
-.slider {
-    position: absolute; /* Changed from relative */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+  .slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
 
 
 
@@ -265,13 +276,29 @@ header .container {
     flex-direction: column;
     color: #fc5185;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
     padding: 0 2rem; /* Add side padding only */
+}
+
+
+
+.text-container {
+    color: white; /* Ensures text is visible on dark background */
+    margin-top: 80px; /* Adjust based on your header height */
+    margin-bottom: 20px;
+    padding: 1.5rem;
+
+    
+      
+    
+    
 }
 
 .slide.active {
     opacity: 1;
+    z-index: 5;
 }
+
 
 .btn {
     display: inline-block;
@@ -1267,11 +1294,177 @@ header .container {
     }
 }
 
-/* Footer */
+/* Enhanced Footer - Building on your existing style */
 footer {
+    background: var(--secondary-color);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    /* Your existing properties maintained */
+}
+
+/* Footer Structure */
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-col {
+    text-align: center;
+    min-width: 200px;
+}
+
+.footer-heading {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    
+    font-size: 1.2rem;
+}
+
+.footer-heading-2 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    
+    font-size: 1.2rem;
+}
+
+/* Contact Alignment */
+.footer-contact {
+    .footer-contact {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+.footer-contact li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+.contact-icon {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.contact-text {
+    flex: 1;
+}
+
+/* X/Twitter Logo Update */
+/* X Logo SVG Styling */
+.x-logo {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    vertical-align: middle;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: None;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1.5rem;
+}
+
+
+
+/* Mobile Centering */
+@media (max-width: 768px) {
+    .footer-columns {
+        flex-direction: column;
+        align-items: center; /* This centers the columns */
+        text-align: center; /* This centers the text */
+        gap: 3rem; /* More space between stacked columns */
+    }
+
+    .footer-col {
+        width: 100%; /* Full width on mobile */
+        max-width: 300px; /* Prevent stretching on very wide mobile */
+    }
+
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center contact items */
+        padding: 0;
+    }
+
+    .footer-contact li {
+        justify-content: center; /* Center icon + text */
+        width: 100%;
+    }
+
+    .social-links {
+        justify-content: center; /* Center social icons */
+    }
+}
+
+/* Consistent heading styles */
+.footer-heading {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Contact items alignment */
+.contact-icon {
+    display: inline-block;
+    width: 25px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+/* Social links styling */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.footer {
     background: var(--secondary-color);
     color: white;
     text-align: center;
     padding: 2rem 0;
     margin-top: 3rem;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
