@@ -1,0 +1,1277 @@
+/* Global Styles */
+:root {
+    --primary-color: #8c85ff;
+    --secondary-color: #2f1c6a;
+    --accent-color: #fc5185;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-top: 30px; /* Matches header height */
+}
+ 
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: -20px auto;
+    
+}
+
+/* Fixed Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    z-index: 1000;
+    height: 90px;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 70px;
+}
+
+
+
+
+
+/* Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 0.5rem;
+}
+
+
+/* Hero Section Adjustments */
+.hero {
+    margin-top: -80px;
+    padding-top: 80px;
+    height: 130vh;
+    min-height: 600px;
+    max-height: 800px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 0; /* Remove negative margin */
+    padding-top: 80px; /* Match header height */
+    box-sizing: border-box; /* Include padding in height calculation */
+
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Updated Header Styles */
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    position: relative; /* Added for mobile menu positioning */
+}
+
+.logo {
+    margin-right: auto; /* Pushes everything else to the right */
+}
+
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    .hero {
+        margin-top: -70px;
+        padding-top: 70px;
+        height: 80vh;
+        min-height: 500px;
+    }
+    
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+    
+    nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    nav.active {
+        max-height: 500px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    
+    /* Adjust hero section for mobile */
+    .hero {
+        height: 300px;
+        padding: 2rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1001;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0; /* Start with 0 height */
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+        z-index: 1000;
+    }
+    
+    nav.active {
+        height: 50vh; /* Half of viewport height */
+        padding: 5rem 2rem 2rem; /* Space for close button */
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0;
+        height: 100%;
+        overflow-y: auto; /* Enable scrolling if content exceeds half screen */
+    }
+    
+    nav li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    /* Push content down when menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+    
+    /* Position the toggle button correctly */
+    nav.active ~ .menu-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
+
+
+
+.slider {
+    position: absolute; /* Changed from relative */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center; /* Ensures full coverage */
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fc5185;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    padding: 0 2rem; /* Add side padding only */
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+/* Cancer Treatment Section */
+.cancer-treatment {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.treatment-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.treatment-text {
+    flex: 1;
+}
+
+.treatment-image {
+    flex: 1;
+}
+
+.treatment-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cancer-treatment h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.cancer-treatment h3 {
+    color: var(--primary-color);
+    margin: 1.5rem 0 0.5rem;
+}
+
+.cancer-treatment ul {
+    margin: 1rem 0 2rem;
+    padding-left: 1.5rem;
+}
+
+.cancer-treatment li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .treatment-content {
+        flex-direction: column;
+    }
+    
+    .treatment-image {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+    
+    .cancer-treatment h2 {
+        font-size: 1.8rem;
+    }
+}
+
+.treatment-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.5); /* Red shadow */
+    border: 2px solid rgba(255, 0, 0, 0.2); /* Optional subtle red border */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Optional hover effect to intensify the shadow */
+.treatment-image img:hover {
+    transform: scale(1.03); /* Slightly enlarge */
+    box-shadow: 0 0 20px 8px rgba(255, 0, 0, 0.6);
+}
+
+/* Herb Section Styles */
+.herb-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.herb-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.herb-image {
+    flex: 1;
+}
+
+.herb-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.herb-text {
+    flex: 1;
+}
+
+.herb-text h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.herb-text h3 {
+    color: var(--primary-color);
+    margin: 1.5rem 0 1rem;
+}
+
+.herb-text ul {
+    margin: 1rem 0 2rem;
+    padding-left: 1.5rem;
+}
+
+.herb-text li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .herb-content {
+        flex-direction: column;
+    }
+    
+    .herb-image {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+    
+    .herb-text h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* Herb Section Layout */
+.herb-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* Add this new class for right-side image layout */
+.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+.herb-image {
+    flex: 1;
+    margin-top: -30px;
+}
+
+.herb-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+   
+}
+
+.herb-text {
+    flex: 1;
+}
+
+/* Responsive Styles - stack on mobile */
+@media (max-width: 768px) {
+    .herb-content,
+    .reverse-layout {
+        flex-direction: column;
+    }
+    
+    .herb-image {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Healing Section Styles */
+.healing-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.healing-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/img/nature-pattern.png') center/cover no-repeat;
+    opacity: 0.03;
+    z-index: 0;
+}
+
+.healing-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.healing-title {
+    font-size: 2.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.healing-subtitle {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+}
+
+.healing-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+.healing-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.highlight-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    flex: 1;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-10px);
+}
+
+.highlight-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.highlight-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.highlight-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(252, 81, 133, 0.3);
+}
+
+.cta-button:hover {
+    background: #e84378;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(252, 81, 133, 0.4);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .healing-title {
+        font-size: 2.2rem;
+    }
+    
+    .healing-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .healing-highlights {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .highlight-card {
+        max-width: 100%;
+    }
+}
+
+/* Why Choose Us - Fixed CSS */
+.why-choose-us {
+    background: white;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.section-title-1{
+    color: rgba(47, 28, 106, 0.85) !important;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.benefit-card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.benefit-content {
+    transition: all 0.4s ease;
+    z-index: 2;
+    background: #f9f9f9;
+}
+
+.benefit-card:hover .benefit-content {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.benefit-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.benefit-summary {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.benefit-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: white;
+    transform: translateY(20px);
+}
+
+.benefit-card:hover .benefit-details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.benefit-details p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #e84378;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(252, 81, 133, 0.4);
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .benefit-card {
+        min-height: 200px;
+    }
+}
+
+/* Cure Cancer Section */
+.cure-cancer-section {
+    position: relative;
+    padding: 5rem 0;
+    color: #fff;
+    background: url('/img/cancer-healing-bg.jpg') center/cover no-repeat;
+}
+
+.bg-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(47, 28, 106, 0.85); /* --secondary-color with opacity */
+    z-index: 0;
+}
+
+.cure-cancer-content {
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.cancer-benefit-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.cancer-benefit-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.cancer-benefit-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.cancer-benefit-card p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.mission-statement {
+    max-width: 800px;
+    margin: 3rem auto;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.mission-statement h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.mission-statement p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background: #e84378;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(252, 81, 133, 0.4);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .mission-statement {
+        padding: 1.5rem;
+    }
+}
+
+
+
+/* Keep existing styles */
+.cure-cancer-section {
+    position: relative;
+    padding: 5rem 0;
+    color: #fff;
+    background: url('/img/cancer-section-img.jpg') center/cover no-repeat;
+}
+
+.bg-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(47, 28, 106, 0.85);
+    z-index: 0;
+}
+
+.cancer-benefit-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.cta-button {
+    display: inline-block; /* Changed from inline-block to block for better centering */
+    margin: 0 auto; /* This centers the button */
+    /* Rest of your existing button styles */
+    background: var(--accent-color);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* Testimonials */
+.text-center{
+    text-align: center;
+}
+
+.testimonials {
+    background: var(--light-bg);
+    padding: 4rem 0;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Safety & Certification Section */
+.safety-section {
+    background: #f9f9f9;
+    padding: 5rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.safety-title {
+    color: rgba(47, 28, 106, 0.85); /* Purple color */
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.safety-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.safety-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.safety-content h3 {
+    color: #2f1c6a; /* Dark purple */
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+.certification-list {
+    columns: 2;
+    column-gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.certification-list li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+    break-inside: avoid;
+    list-style-type: none;
+}
+
+.certification-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #8c85ff; /* Purple color */
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .safety-title {
+        font-size: 1.8rem;
+    }
+    
+    .certification-list {
+        columns: 1;
+    }
+}
+
+/* Final CTA Section */
+.final-cta-section {
+    position: relative;
+    padding: 5rem 0;
+    color: #fff;
+    background: url('/img/trust-img.jpg') center/cover no-repeat;
+    text-align: center;
+}
+
+.cta-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(47, 28, 106, 0.85); /* Dark purple with 85% opacity */
+    z-index: 0;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.cta-message {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-message p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.cta-question {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: pink; /* Accent color */
+    margin: 2rem 0;
+}
+
+.cta-warning {
+    font-style: italic;
+    color: #ffcc00; /* Yellow warning color */
+}
+
+.cta-urgent {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    color: #fff;
+}
+
+.cta-note {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--accent-color);
+    color: white;
+    padding: 18px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid white;
+}
+
+.cta-button:hover {
+    background: #fff;
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(252, 81, 133, 0.6);
+}
+
+@media (max-width: 768px) {
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .cta-message {
+        padding: 1.5rem;
+    }
+    
+    .cta-message p {
+        font-size: 1rem;
+    }
+}
+
+/* Urgent CTA Section */
+.urgent-cta-section {
+    background-color: #f9f9f9;
+    padding: 4rem 0;
+    color: #333; /* Dark text for contrast */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.urgent-cta-section::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.urgent-cta-section::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.urgent-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: #2f1c6a; /* Your dark purple */
+}
+
+.urgent-title span {
+    color: #fc5185;
+    display: block;
+    font-size: 2.5rem;
+}
+
+.urgent-highlight {
+    background: rgba(252, 81, 133, 0.1); /* Light accent color tint */
+    border-left: 4px solid #fc5185;
+    padding: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0 8px 8px 0;
+    color: #333;
+}
+.urgent-highlight .icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.urgent-highlight p {
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.urgency-badge {
+    background: rgba(140, 133, 255, 0.1); /* Light primary color tint */
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    min-width: 180px;
+    color: #333;
+    border: 1px solid rgba(140, 133, 255, 0.3);
+}
+
+.urgency-badge {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    min-width: 180px;
+}
+
+.badge-icon {
+    font-size: 1.5rem;
+    margin-right: 0.8rem;
+}
+
+.urgent-cta-button {
+    display: inline-flex;
+    flex-direction: column;
+    background: #fc5185;
+    color: white;
+    padding: 1.5rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    margin: 2rem 0;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(252, 81, 133, 0.3);
+}
+
+.urgent-cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(252, 81, 133, 0.6);
+    background: #ff2b6e;
+}
+
+.urgent-cta-button .sub-text {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 0.3rem;
+}
+
+.urgent-cta-section::before,
+.urgent-cta-section::after {
+    content: none;
+}
+
+.guarantee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.shield-icon {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .urgent-title {
+        font-size: 1.8rem;
+    }
+    
+    .urgent-title span {
+        font-size: 2rem;
+    }
+    
+    .urgent-highlight {
+        flex-direction: column;
+        text-align: center;
+        border-left: none;
+        border-top: 4px solid #fc5185;
+        border-radius: 8px;
+    }
+    
+    .urgent-highlight .icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .urgent-highlight p {
+        text-align: center;
+    }
+    
+    .urgency-badge {
+        min-width: 140px;
+    }
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
