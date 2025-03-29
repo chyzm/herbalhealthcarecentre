@@ -149,6 +149,7 @@ header .container {
         padding-top: 70px;
         height: 100vh;
         min-height: 500px;
+        max-height: 800px;
     }
     
     .menu-toggle {
@@ -1428,6 +1429,10 @@ footer {
 
     .social-links {
         justify-content: center; /* Center social icons */
+    }
+
+    a{
+        text-decoration: none;
     }
 }
 
