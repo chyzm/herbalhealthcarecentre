@@ -1,3 +1,34 @@
+// Preloader
+window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    setTimeout(function() {
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+    }, 500); // Adjust timing as needed
+});
+
+// Back to Top Button
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('active');
+        } else {
+            backToTopButton.classList.remove('active');
+        }
+    });
+    
+    backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.createElement('button');
     menuToggle.classList.add('menu-toggle');
