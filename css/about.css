@@ -1,0 +1,162 @@
+/* About Page Specific Styles */
+:root {
+    --primary: #2f1c6a;
+    --secondary: #4a2f8a;
+    --accent: #6c4da9;
+    --light: #f8f9fa;
+    --text: #333333;
+    --white: #ffffff;
+}
+
+/* About Hero Section */
+.about-hero {
+    background: linear-gradient(rgba(47, 28, 106, 0.8), rgba(47, 28, 106, 0.8)), 
+                url('/img/about-bg.jpg') center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+    padding: 120px 20px 100px;
+    margin-top: 40px; /* Adjust based on header height */
+}
+
+.about-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.content-section.light-bg {
+    background-color: var(--light);
+}
+
+.section-title {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content-text {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.content-text p {
+    margin-bottom: 20px;
+}
+
+/* Values Section */
+.values-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.value-card {
+    background: var(--light);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 0;
+    background: rgba(253, 252, 255, 0.9); 
+    text-align: center;
+    color: rgba(47, 28, 106, 0.8);
+}
+
+.cta-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 100px 20px 80px;
+        margin-top: 20px;
+    }
+    
+    .about-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .content-section {
+        padding: 60px 0;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .about-hero p {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+}
