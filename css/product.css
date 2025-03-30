@@ -5,12 +5,13 @@
     --light: #f8f9fa;
     --text: #333333;
     --white: #ffffff;
+    --accent-color: #fc5185;
 }
 
 /* Products Hero */
 .products-hero {
     background: linear-gradient(rgba(47, 28, 106, 0.8), rgba(47, 28, 106, 0.8)), 
-                url('/img/products-bg.jpg') center/cover no-repeat;
+                url('/img/Licorice-Roots.png') center/cover no-repeat;
     color: var(--white);
     text-align: center;
     padding: 120px 20px 80px;

@@ -1297,6 +1297,8 @@ header .container {
     .urgency-badge {
         min-width: 140px;
     }
+
+   
 }
 
 
@@ -1340,8 +1342,14 @@ footer {
     margin-bottom: 15px;
 }
 
+
+
 .footer-contact i {
     color: var(--accent);
+}
+
+.footer-links{
+    padding-left: 15px ;
 }
 
 .footer-links li {
@@ -1383,6 +1391,7 @@ footer {
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
+    padding-bottom: 10px;
     border-top: 1px solid rgba(255,255,255,0.1);
     font-size: 0.9rem;
 }

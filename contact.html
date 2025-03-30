@@ -11,6 +11,122 @@
     <link rel="stylesheet" href="/css/contact.css">
     <link rel="stylesheet" href="/css/main.css">
 
+    <style>
+         /* Handles the form styling Styles */
+
+        :root {
+            --primary: #2f1c6a;
+            --secondary: #4a2f8a;
+            --accent: #6c4da9;
+            --light: #f8f9fa;
+            --text: #333333;
+            --white: #ffffff;
+        }
+        
+        
+       
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 60px 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info,
+        .contact-form {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        /* Contact Methods */
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            background-color: var(--accent);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h3 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        /* Email Link Fix */
+        .email-link {
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            display: inline-block;
+            max-width: 100%;
+        }
+        
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .btn {
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        /* Desktop Layout (992px and up) */
+        @media (min-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .contact-info {
+                position: sticky;
+                top: 20px;
+            }
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 480px) {
+            .contact-section {
+                padding: 40px 0;
+            }
+            
+            .contact-info,
+            .contact-form {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+    
+
     
 </head>
 <body>
@@ -40,78 +156,77 @@
         </div>
     </section>
 
+
     
-        <!-- Contact Section -->
-        <section class="contact-section">
-            <div class="container">
-                <div class="contact-grid">
-                    <!-- Contact Information -->
-                    <div class="contact-info">
-                        <h2>Get In Touch</h2>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Phone</h3>
-                                <a href="tel:+254752198022">+254 752 198022</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h3>Email</h3>
-                                <a href="mailto:herbalhealthcarecentre@yahoo.com">herbalhealthcarecentre@yahoo.com</a>
-                            </div>
-                        </div>
-                        
-                       
+
+    
+          <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Left Column - Contact Info -->
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
                     
-                    <!-- Contact Form -->
-                    <div class="contact-form">
-                        <h2>Send Us a Message</h2>
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" class="form-control" required>
-                            </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <a href="tel:+254752198022">+254 752 198022</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:herbalhealthcarecentre@yahoo.com" class="email-link">herbalhealthcarecentre@yahoo.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="">
+                            <!-- <i class="fas fa-map-marker-alt"></i>-->
+                           
+                        </div>
+                        <div class="contact-details">
+                            <!--<h3>Address</h3>-->
+                            <!--<p>123 Healing Path Avenue<br>Nairobi, Kenya</p>-->
                             
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" class="form-control" required>
-                            </div>
                             
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="form-control">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <select id="subject" name="subject" class="form-control" required>
-                                    <option value="">Select a subject</option>
-                                    <option value="general">General Inquiry</option>
-                                    <option value="product">Product Information</option>
-                                    <option value="appointment">Appointment Request</option>
-                                    <option value="feedback">Feedback</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Your Message</label>
-                                <textarea id="message" name="message" class="form-control" required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn">Send Message</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Right Column - Contact Form -->
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
     
        
 
