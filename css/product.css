@@ -14,7 +14,7 @@
     color: var(--white);
     text-align: center;
     padding: 120px 20px 80px;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 .products-hero h1 {
@@ -290,24 +290,86 @@
     transition: transform 0.3s ease;
 }
 
-.media-player:hover {
-    transform: translateY(-5px);
-}
-
 .player-container {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     height: 0;
     overflow: hidden;
+    background: #000;
 }
 
-.player-container iframe {
+.html-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border: none;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background-color: rgba(108, 77, 169, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.play-button:hover {
+    background-color: rgba(47, 28, 106, 0.9);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.player-container:hover .video-controls {
+    transform: translateY(0);
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.seek-bar {
+    flex-grow: 1;
+    height: 5px;
+    cursor: pointer;
+}
+
+.time-display {
+    color: white;
+    font-size: 12px;
+    min-width: 100px;
+    text-align: center;
 }
 
 .media-info {
@@ -337,24 +399,17 @@
     margin-right: 5px;
 }
 
-/* Responsive Styles */
-@media (max-width: 900px) {
-    .media-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .media-grid {
         grid-template-columns: 1fr;
     }
     
-    .media-info h3 {
-        font-size: 1.1rem;
+    .play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
     }
 }
-
 
 /* Responsive Styles */
 @media (max-width: 768px) {

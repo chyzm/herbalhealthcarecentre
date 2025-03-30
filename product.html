@@ -76,14 +76,31 @@
     <!-- Media Players Section -->
 <section class="media-players light-bg">
     <div class="container">
-        <h2 class="section-title">Educational Resources</h2>
+        <h2 class="section-title">Start your journey to wellness</h2>
         <div class="media-grid">
             <!-- Video Player 1 -->
             <div class="media-player">
                 <div class="player-container">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/example1" 
-                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
+                    <video class="html-video" poster="/img/vid-1-poster.jpg">
+                        <source src="/img/Vid-1.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                    <div class="play-button" onclick="toggleVideo(this)">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-controls">
+                        <button class="control-btn play-pause" onclick="toggleVideo(this.closest('.player-container'))">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <input type="range" class="seek-bar" value="0" min="0">
+                        <span class="time-display">00:00 / 00:00</span>
+                        <button class="control-btn volume" onclick="toggleMute(this)">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <button class="control-btn fullscreen" onclick="toggleFullscreen(this.closest('.player-container'))">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
                 </div>
                 <div class="media-info">
                     <h3>Understanding Herbal Cancer Treatments</h3>
@@ -98,9 +115,26 @@
             <!-- Video Player 2 -->
             <div class="media-player">
                 <div class="player-container">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/example2" 
-                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
+                    <video class="html-video" poster="/img/vid-2-poster.jpg">
+                        <source src="/img/vid-2.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                    <div class="play-button" onclick="toggleVideo(this)">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-controls">
+                        <button class="control-btn play-pause" onclick="toggleVideo(this.closest('.player-container'))">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <input type="range" class="seek-bar" value="0" min="0">
+                        <span class="time-display">00:00 / 00:00</span>
+                        <button class="control-btn volume" onclick="toggleMute(this)">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <button class="control-btn fullscreen" onclick="toggleFullscreen(this.closest('.player-container'))">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
                 </div>
                 <div class="media-info">
                     <h3>Patient Success Stories</h3>
@@ -114,6 +148,10 @@
         </div>
     </div>
 </section>
+
+
+
+
 
     <!-- Testimonials -->
     <section class="testimonials">
