@@ -1295,186 +1295,95 @@ header .container {
     }
 }
 
-/* Enhanced Footer - Building on your existing style */
+
+
+
+/* Footer */
 footer {
-    background: var(--secondary-color);
-    color: white;
-    padding: 2rem 0;
-    margin-top: 3rem;
-    /* Your existing properties maintained */
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 60px 0 20px;
 }
 
-/* Footer Structure */
-.footer-columns {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
 }
 
-.footer-col {
-    text-align: center;
-    min-width: 200px;
+.footer-col h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
 }
 
-.footer-heading {
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    
-    font-size: 1.2rem;
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent);
 }
 
-.footer-heading-2 {
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    
-    font-size: 1.2rem;
-}
-
-/* Contact Alignment */
-.footer-contact {
-    .footer-contact {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-}
 .footer-contact li {
-    margin: 0.5rem 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.2rem;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
-.contact-icon {
-    display: inline-block;
-    width: 20px;
-    text-align: center;
-    margin-right: 10px;
+.footer-contact i {
+    color: var(--accent);
 }
 
-.contact-text {
-    flex: 1;
+.footer-links li {
+    margin-bottom: 10px;
 }
 
-/* X/Twitter Logo Update */
-/* X Logo SVG Styling */
-.x-logo {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    vertical-align: middle;
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
 }
 
 .social-links {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 15px;
 }
 
 .social-links a {
-    color: white;
-    background: rgba(255, 255, 255, 0.1);
-    width: 36px;
-    height: 36px;
+    color: var(--white);
+    background-color: rgba(255,255,255,0.1);
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: None;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s;
+    text-decoration: none;
 }
 
 .social-links a:hover {
-    background: var(--accent-color);
-    transform: translateY(-2px);
+    background-color: var(--accent);
 }
 
 .footer-bottom {
     text-align: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 1.5rem;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
 }
 
-
-
-/* Mobile Centering */
-@media (max-width: 768px) {
-    .footer-columns {
-        flex-direction: column;
-        align-items: center; /* This centers the columns */
-        text-align: center; /* This centers the text */
-        gap: 3rem; /* More space between stacked columns */
-    }
-
-    .footer-col {
-        width: 100%; /* Full width on mobile */
-        max-width: 300px; /* Prevent stretching on very wide mobile */
-    }
-
-    .footer-contact {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center contact items */
-        padding: 0;
-    }
-
-    .footer-contact li {
-        justify-content: center; /* Center icon + text */
-        width: 100%;
-    }
-
-    .social-links {
-        justify-content: center; /* Center social icons */
-    }
-
-    a{
-        text-decoration: none;
-    }
-}
-
-/* Consistent heading styles */
-.footer-heading {
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-
-/* Contact items alignment */
-.contact-icon {
-    display: inline-block;
-    width: 25px;
-    text-align: center;
-    margin-right: 10px;
-}
-
-/* Social links styling */
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.footer {
-    background: var(--secondary-color);
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-}
-
-.footer-columns {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
-
-.text-white{
-    color: #eee;
+.footer-bottom a {
+    color: var(--accent);
     text-decoration: none;
 }
