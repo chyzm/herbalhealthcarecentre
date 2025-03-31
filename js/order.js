@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const amountInput = document.getElementById('amount');
     const currencyInput = document.getElementById('currency');
     
+    // Initialize with zero values
+    function initializePrices() {
+        currentPrice.textContent = "0";
+        totalAmount.textContent = "0";
+        amountInput.value = "0";
+        currencyInput.value = "";
+    }
+    
     // Update price based on country selection
     countrySelect.addEventListener('change', function() {
         updatePrice();
@@ -15,9 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Quantity controls
     decreaseBtn.addEventListener('click', function() {
-        if (quantityInput.value > 0) {
+        if (quantityInput.value > 1) {
             quantityInput.value--;
             updatePrice();
+        } else {
+            alert('Quantity must be at least 1');
         }
     });
     
@@ -34,26 +44,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const price = selectedOption.dataset.price || 0;
         const currency = selectedOption.dataset.currency || '';
         const quantity = quantityInput.value;
-        const total = price * quantity;
+        
+        const total = quantity >= 1 ? price * quantity : 0;
         
         // Format number with commas
-        const formattedTotal = new Intl.NumberFormat().format(total);
         const formattedPrice = new Intl.NumberFormat().format(price);
+        const formattedTotal = new Intl.NumberFormat().format(total);
         
-        currentPrice.textContent = `${formattedPrice} ${currency}`;
-        totalAmount.textContent = `${formattedTotal} ${currency}`;
+        currentPrice.textContent = quantity >= 1 ? `${formattedPrice} ${currency}` : "0";
+        totalAmount.textContent = quantity >= 1 ? `${formattedTotal} ${currency}` : "0";
         
         // Update hidden inputs
         amountInput.value = total;
-        currencyInput.value = currency;
+        currencyInput.value = quantity >= 1 ? currency : '';
     }
     
-    // Initialize
-    updatePrice();
-});
-
-// Back to Top Button
-document.addEventListener('DOMContentLoaded', function() {
+    // Initialize with zero values
+    initializePrices();
+    
+    // Back to Top Button
     const backToTopButton = document.querySelector('.back-to-top');
     
     window.addEventListener('scroll', function() {
@@ -70,5 +79,77 @@ document.addEventListener('DOMContentLoaded', function() {
             top: 0,
             behavior: 'smooth'
         });
+    });
+    
+    // Form submission handler
+    document.getElementById('orderForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Validate quantity
+        const quantity = parseInt(quantityInput.value);
+        if (quantity < 1) {
+            alert('Quantity must be at least 1');
+            return false;
+        }
+        
+        // Show loading indicator
+        const submitBtn = document.querySelector('.submit-btn');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="spinner"></span> Processing...';
+        
+        try {
+            // Submit form via AJAX
+            const formData = new FormData(this);
+            
+            // Save order details to LocalStorage
+            const orderDetails = {};
+            formData.forEach((value, key) => {
+                orderDetails[key] = value;
+            });
+            localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+            
+            const response = await fetch('process_order.php', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const data = await response.json();
+            
+            if (data.success) {
+                // Save WhatsApp link too
+                localStorage.setItem('whatsappLink', data.whatsapp_link);
+
+                // Mobile detection
+                const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                
+                // Always redirect to thank you page first
+                window.location.href = 'thank_you.html';
+                
+                // Open WhatsApp after a short delay
+                setTimeout(() => {
+                    if (isMobile) {
+                        // For mobile - create a temporary iframe to open WhatsApp
+                        const iframe = document.createElement('iframe');
+                        iframe.style.display = 'none';
+                        iframe.src = data.whatsapp_link;
+                        document.body.appendChild(iframe);
+                        setTimeout(() => document.body.removeChild(iframe), 3000);
+                    } else {
+                        // For desktop - open in new tab
+                        window.open(data.whatsapp_link, '_blank');
+                    }
+                }, 500);
+            } else {
+                throw new Error(data.message || 'Submission failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert(`Error: ${error.message}\nPlease contact us directly at +254 752 198022`);
+        } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        }
     });
 });
