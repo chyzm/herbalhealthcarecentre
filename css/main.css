@@ -1470,3 +1470,11 @@ footer {
     color: var(--accent);
     text-decoration: none;
 }
+
+
+blockquote {
+    font-style: italic;
+    border-left: 4px solid #ccc;
+    padding-left: 10px;
+    margin: 10px 0;
+}

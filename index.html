@@ -22,6 +22,7 @@
 
 
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/product.css">
     
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
@@ -107,7 +108,7 @@
                     <li>Ganoderma Lucidum</li>
                     <li>Licorice Roots</li>
                 </ul>
-                <a href="/products" class="btn">Learn More About Our Treatment</a>
+                <a href="product.html" class="btn">Learn More About Our Treatment</a>
             </div>
             <div class="treatment-image">
                 <img src="/img/nature-1.png" alt="Natural cancer treatment ingredients" loading="lazy">
@@ -263,8 +264,49 @@
     </div>
 </section>
 
-<!-- Why Choose Us Section - Fixed Version -->
-<!-- Why Choose Us Section - Horizontal Layout -->
+
+<!-- Media Players Section -->
+<section class="media-players light-bg">
+    <div class="container">
+        <h2 class="section-title"></h2>
+        <div class="media-grid">
+            <!-- Video Player 1 -->
+            <div class="media-player">
+                <div class="player-container">
+                    <video class="html-video" poster="/img/vid-1-poster.jpg">
+                        <source src="/img/Vid-1.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                    <div class="play-button" onclick="toggleVideo(this)">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-controls">
+                        <button class="control-btn play-pause" onclick="toggleVideo(this.closest('.player-container'))">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <input type="range" class="seek-bar" value="0" min="0">
+                        <span class="time-display">00:00 / 00:00</span>
+                        <button class="control-btn volume" onclick="toggleMute(this)">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <button class="control-btn fullscreen" onclick="toggleFullscreen(this.closest('.player-container'))">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="media-info">
+                    <h3>Understanding Herbal Cancer Treatments</h3>
+                    <p>Learn how our herbal formulas work in harmony with your body's natural healing processes.</p>
+                    <div class="media-meta">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
 <section class="why-choose-us">
     <div class="container">
         <h2 class="section-title section-title-1">WHY CHOOSE US?</h2>
@@ -399,16 +441,38 @@
 
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p>"I was diagnosed with cancer, and the news was devastating. I wanted to explore all options, including natural remedies. That’s when I discovered these incredible natural products. Incorporating them into my treatment plan has made a remarkable difference in my overall well-being. I feel more energized, my immune system is stronger, and I believe they are complementing my conventional treatment. I highly recommend these products to anyone fighting cancer."</p>
-                    <span style="color: rgba(47, 28, 106, 0.85);"><strong>- Debrah Mirembe, Uganda</strong></span>
+                    <blockquote>"Being diagnosed with cancer was overwhelming, and I knew I wanted to explore all possible options, including natural remedies. That’s when I discovered these incredible products. Since adding them to my treatment plan, I’ve noticed a significant improvement in my overall well-being. I feel more energized, my immune system is stronger, and I truly believe they are supporting my conventional treatment. I highly recommend them to anyone on this journey."</blockquote>
+                    <div class="star-rating" style="color: gold; font-size: 1.2rem; margin: 5px 0;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span style="color: rgba(47, 28, 106, 0.85);"><strong><cite>- Debrah Mirembe, Uganda</cite></strong></span>
                 </div>
                 <div class="testimonial-card">
-                    <p>"As a healthcare professional, I am always cautious about recommending natural products. However, after extensive research, I came across this exceptional line of supplements. I have seen remarkable results in my patients who have incorporated these products into their cancer treatment plans. I wholeheartedly endorse these natural products for anyone seeking additional support during their cancer journey."</p>
-                    <span style="color: rgba(47, 28, 106, 0.85);"><strong>- Dr. Amahle Johnson, MD, Pretoria</strong></span>
+                    <blockquote>"As a healthcare professional, I approach natural products with caution. However, after thorough research, I discovered this outstanding line of supplements. I've witnessed remarkable improvements in patients who have included these products in their cancer treatment plans. I fully support these natural options for anyone looking for additional support on their cancer journey."</blockquote>
+                    <div class="star-rating" style="color: gold; font-size: 1.2rem; margin: 5px 0;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span style="color: rgba(47, 28, 106, 0.85);"><strong><cite>- Dr. Amahle Johnson, MD, Pretoria</cite></strong></span>
                 </div>
                 <div class="testimonial-card">
-                    <p>"After going through the grueling process of chemotherapy, I was looking for ways to support my body’s healing. These natural supplements have been a game-changer for me. They have helped reduce inflammation, boost my immune system, and restore my energy levels. I’m so grateful to have found these products on my journey to recovery."</p>
-                    <span style="color: rgba(47, 28, 106, 0.85);"><strong>- Solomon Koffi , Ghana</strong></span>
+                    <blockquote>"After going through the grueling process of chemotherapy, I was looking for ways to support my body’s healing. These natural supplements have been a game-changer for me. They have helped reduce inflammation, boost my immune system, and restore my energy levels. I’m so grateful to have found these products on my journey to recovery."</blockquote>
+                    <!-- Star Rating -->
+                    <div class="star-rating" style="color: gold; font-size: 1.2rem; margin: 5px 0;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span style="color: rgba(47, 28, 106, 0.85);"><strong><cite>- Solomon Koffi , Ghana</cite></strong></span>
                 </div>
             </div>
         </div>
@@ -448,15 +512,15 @@
             <h2 class="cta-title">YOU HAVE OUR WORD</h2>
             
             <div class="cta-message">
-                <p>These are <strong>Not Like Any Other Products</strong> You Have Ever Come Across or Used. These are Efficacious, Effective, and Perfectly Made To Normalize Your Health and Make You Cancer Free, Once and for All!</p>
+                <p>These products stand apart from anything you’ve encountered before. They are highly <strong>effective, carefully formulated, and designed to support your health and well-being,</strong> helping you on your journey toward recovery.</p>
                 
-                <p>And irrespective of the severity, or damage you have experienced before, <strong>Here comes your Permanent Solution!</strong></p>
                 
-                <p class="cta-question">Won't You Rather Take A Bold Step, Get This Pack and Experience the Peace & Comfort You Have Been Longing For?</p>
                 
-                <p class="cta-warning">Or Do You Want To Stay Back, Depressed, and Get Non-effective, Fake, and Seemingly Cheaper Products that you would keep buying over and over again without any remedy?</p>
+                <p class="cta-question">Would you consider taking a proactive step toward better health by trying this pack and experiencing the relief and well-being you deserve?</p>
                 
-                <p class="cta-urgent">If I were You, I would rather embrace this <strong>ONCE IN A LIFETIME OPPORTUNITY</strong> by ordering and Get This PACK Delivered Immediately to your Door Step Today!!!</p>
+               
+                
+                <p class="cta-urgent">Don't miss this unique opportunity to place your order now and have the pack delivered straight to your doorstep without delay.</p>
                 
                 <p class="cta-note">PLEASE, ONLY PLACE YOUR ORDER IF YOU'RE READY NOW TO GET THE PACK DELIVERED TO YOU AND PAY ON DELIVERY. THANK YOU</p>
             </div>

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Quantity controls
     decreaseBtn.addEventListener('click', function() {
-        if (quantityInput.value > 1) {
+        if (quantityInput.value > 0) {
             quantityInput.value--;
             updatePrice();
         }
@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update price display
     function updatePrice() {
         const selectedOption = countrySelect.options[countrySelect.selectedIndex];
-        const price = selectedOption.dataset.price || 5000;
-        const currency = selectedOption.dataset.currency || 'KES';
+        const price = selectedOption.dataset.price || 0;
+        const currency = selectedOption.dataset.currency || '';
         const quantity = quantityInput.value;
         const total = price * quantity;
         
