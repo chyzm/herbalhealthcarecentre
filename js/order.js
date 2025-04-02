@@ -45,14 +45,38 @@ document.addEventListener('DOMContentLoaded', function() {
         const currency = selectedOption.dataset.currency || '';
         const quantity = quantityInput.value;
         
-        const total = quantity >= 1 ? price * quantity : 0;
+        // Calculate base total
+        let total = quantity >= 1 ? price * quantity : 0;
+        let displayHTML = "0";
         
-        // Format number with commas
-        const formattedPrice = new Intl.NumberFormat().format(price);
-        const formattedTotal = new Intl.NumberFormat().format(total);
+        if (quantity >= 1) {
+            if (quantity > 1) {
+                // Apply 15% discount if quantity > 1
+                const originalTotal = price * quantity;
+                const discount = originalTotal * 0.15;
+                total = originalTotal - discount;
+                
+                // Create display with strikethrough original price
+                displayHTML = `
+                    
+                    </span>
+                    <div class="text-success small mt-1">
+                        15% discount applied (Save ${new Intl.NumberFormat().format(discount)} ${currency})
+                    </div>
+                `;
+            } else {
+                // No discount for single quantity
+                displayHTML = `
+                    <span class="text-primary fw-bold">
+                        ${new Intl.NumberFormat().format(total)} ${currency}
+                    </span>
+                `;
+            }
+        }
         
-        currentPrice.textContent = quantity >= 1 ? `${formattedPrice} ${currency}` : "0";
-        totalAmount.textContent = quantity >= 1 ? `${formattedTotal} ${currency}` : "0";
+        // Update displays
+        currentPrice.textContent = quantity >= 1 ? `${new Intl.NumberFormat().format(price)} ${currency}` : "0";
+        totalAmount.innerHTML = displayHTML;
         
         // Update hidden inputs
         amountInput.value = total;
