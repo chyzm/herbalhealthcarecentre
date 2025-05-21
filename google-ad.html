@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Natural Cancer Solution | Herbal Healthcare Centre</title>
+    <meta name="description" content="Discover our proven herbal immunotherapy treatment combining ancient wisdom with modern science to combat cancer naturally.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+     <!-- Tailwind CSS CDN -->
+     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Add to tailwind.config.js under theme.extend
+        // Alternatively, add these as custom CSS classes
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        fadeInDown: 'fadeInDown 1s ease-out forwards',
+                        fadeInUp: 'fadeInUp 1s ease-out forwards',
+                        fadeIn: 'fadeIn 1s ease-out forwards',
+                        blob: 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        fadeInDown: {
+                            '0%': { opacity: 0, transform: 'translateY(-20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: 0 },
+                            '100%': { opacity: 1 },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    
+    
+    <style>
+        :root {
+            --primary: #2f1c6a;
+            --secondary: #4a2f8a;
+            --accent: #6c4da9;
+            --accent-color: #fc5185;
+            --white: #ffffff;
+            --light-bg: #f9f9f9;
+            --text-color: #333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+        }
+        
+        .header-cta {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .header-cta:hover {
+            background-color: #e84378;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-fadeInDown {
+            animation: fadeInDown 1s ease-out forwards;
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-300 {
+            animation-delay: 0.3s;
+        }
+        .animation-delay-600 {
+            animation-delay: 0.6s;
+        }
+        .animation-delay-900 {
+            animation-delay: 0.9s;
+        }
+        .animation-delay-1200 {
+            animation-delay: 1.2s;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        
+        .hero {
+            background: linear-gradient(rgba(47, 28, 106, 0.85), rgba(47, 28, 106, 0.85)), 
+                        url('/img/hero-img-1.avif') center/cover no-repeat;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .video-container {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .video-thumbnail {
+            width: 100%;
+            display: block;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .play-button i {
+            color: white;
+            font-size: 30px;
+            margin-left: 5px;
+        }
+        
+        .play-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: #e84378;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(252, 81, 133, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #e84378;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(252, 81, 133, 0.4);
+        }
+         
+      /* Media Players Section */
+.media-players {
+    padding: 80px 0;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.media-player {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.player-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.html-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background-color: rgba(108, 77, 169, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.play-button:hover {
+    background-color: rgba(47, 28, 106, 0.9);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.player-container:hover .video-controls {
+    transform: translateY(0);
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.seek-bar {
+    flex-grow: 1;
+    height: 5px;
+    cursor: pointer;
+}
+
+.time-display {
+    color: white;
+    font-size: 12px;
+    min-width: 100px;
+    text-align: center;
+}
+
+.media-info {
+    padding: 20px;
+}
+
+.media-info h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.media-info p {
+    color: var(--text);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.media-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: var(--accent);
+}
+
+.media-meta i {
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+}
+          
+          
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 5rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Four equal-width columns */
+            gap: 20px; /* Space between cards */
+            padding: 20px;
+          }
+          
+          .benefit-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+          
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .benefits-grid {
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+          
+          @media (max-width: 640px) {
+            .benefits-grid {
+              grid-template-columns: 1fr;
+            }
+          }
+          
+        
+        /* Testimonial Section */
+        .testimonials {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card blockquote {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .star-rating {
+            color: gold;
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+        
+        .testimonial-author {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Guarantee Section */
+        .guarantee-section {
+            background-color: var(--primary);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .guarantee-badge {
+            background-color: var(--accent-color);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 5rem 0;
+            text-align: center;
+            background-color: var(--light-bg);
+        }
+        
+        .final-cta .cta-button {
+            font-size: 1.3rem;
+            padding: 18px 50px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo img {
+            height: 60px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .header-cta {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            .header-container{
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+
+         /* Blinking animation */
+         @keyframes blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+        
+        /* Arrow pointing down animation */
+        @keyframes pointDown {
+            0%, 100% { transform: translateY(0) scaleY(1); }
+            50% { transform: translateY(5px) scaleY(1.3); }
+        }
+        
+        .animate-blink {
+            animation: blink 1.5s infinite;
+        }
+        
+        .animate-point-down {
+            animation: pointDown 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="/img/herbal-logo.avif" alt="Herbal Healthcare Centre">
+            </div>
+            <a href="#order" class="header-cta">ORDER NOW</a>
+        </div>
+    </header>
+
+<!-- Hero Section with Background Image and Tailwind Animations -->
+<section class="hero relative overflow-hidden min-h-[80vh] flex items-center">
+    <!-- Background image with overlay -->
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-green-50/90 to-blue-50/90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-white/10"></div>
+    </div>
+    
+    <!-- Animated background elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 left-20 w-40 h-40 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
+        <div class="absolute bottom-20 right-20 w-40 h-40 bg-green-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div class="absolute top-1/3 right-1/4 w-40 h-40 bg-teal-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+    </div>
+    
+    <div class="container mx-auto px-6 py-24 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+            <!-- Animated title -->
+            <h1 class="hero-title text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+                <span class="inline-block opacity-0 animate-fadeInDown">The Ultimate</span>
+                <span class="inline-block text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600 opacity-0 animate-fadeInDown animation-delay-300">Natural Cancer</span>
+                <span class="inline-block opacity-0 animate-fadeInDown animation-delay-600">Solution</span>
+            </h1>
+            
+            <!-- Animated subtitle with slight delay -->
+            <p class="hero-subtitle text-xl md:text-2xl text-gray-600 mb-8 opacity-0 animate-fadeInUp animation-delay-900">
+                Harnessing the power of nature's finest herbs to combat cancer effectively and restore your health naturally
+            </p>
+            
+            <!-- Animated CTA button -->
+            <div class="opacity-0 animate-fadeIn animation-delay-1200">
+                <button onclick="window.location.href='google-ad.html#order'" class="px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+                    Discover the Solution
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Auto-Play Media Player Section -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+            <!-- Video Player Card -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <!-- Video Header Text -->
+                <div class="p-6 text-center">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">We have no doubt in this product working for you.</h3>
+                    <h3 class="text-xl text-gray-600">Together, let us make this change.</h3>
+                </div>
+                
+                <!-- Video Player Container -->
+                <div class="relative group">
+                    <!-- Video Element with Auto-play -->
+                    <video class="w-full" poster="/img/vid-1-poster.jpg" autoplay muted playsinline>
+                        <source src="/img/Vid-1.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                    
+                    <!-- Video Controls -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="flex items-center space-x-4">
+                            <button class="text-white control-btn play-pause" onclick="toggleVideo(this)">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                                </svg>
+                            </button>
+                            <input type="range" class="flex-1 seek-bar h-1.5 rounded-full appearance-none bg-gray-400" value="0" min="0">
+                            <span class="text-white text-sm time-display">00:00 / 00:00</span>
+                            <button class="text-white control-btn volume" onclick="toggleMute(this)">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M12 6a7.975 7.975 0 015.657 2.343m0 0a7.975 7.975 0 010 11.314m-11.314 0a7.975 7.975 0 010-11.314m0 0a7.975 7.975 0 015.657-2.343"/>
+                                </svg>
+                            </button>
+                            <button class="text-white control-btn fullscreen" onclick="toggleFullscreen(this.closest('.group'))">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+      
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Our Natural Treatment Works</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌿</div>
+                    <h3>100% Natural Ingredients</h3>
+                    <p>Powerful herbal blend including Barbed Skullcap, Hedyotis Diffusa, Reishi Mushroom, and Licorice Root</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔬</div>
+                    <h3>Scientifically Proven</h3>
+                    <p>Backed by clinical research and traditional Chinese medicine with proven results</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚕️</div>
+                    <h3>Boosts Immunity</h3>
+                    <p>Oral immunotherapy that strengthens your body's natural defenses against cancer</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌍</div>
+                    <h3>Globally Approved</h3>
+                    <p>Certified by FDA, NAFDAC, and other international health regulatory bodies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Real People, Real Results</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <blockquote>"After going through chemotherapy, these natural supplements helped restore my energy and support my recovery. I'm so grateful!"</blockquote>
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-author">- Solomon Koffi, Ghana</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <blockquote>"As a doctor, I was skeptical but after seeing the research and results in my patients, I fully recommend this treatment."</blockquote>
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-author">- Dr. Amahle Johnson, MD</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <blockquote>"This herbal treatment gave me hope when conventional medicine had limited options. My quality of life has improved significantly."</blockquote>
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-author">- Debrah Mirembe, Uganda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-badge">🛡️</div>
+            <h2>100% Natural & Safe</h2>
+            <p>Our treatment carries the prestigious Kosher Seal and is approved by health regulatory bodies worldwide including FDA, NAFDAC, and SAHPRA.</p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="order">
+        <div class="container">
+            <h2 class="section-title">Ready to Take Control of Your Health?</h2>
+            <div class="media-info">
+                <h3 class="text-center">We have no doubt in this product working for you.</h3> 
+                <h3 class="text-center">Together, let us make this change.</h3>
+              
+                
+            </div>
+            <div class="text-center cursor-pointer group mt-5">
+                <!-- Blinking "Click Here!" text -->
+                <p class="text-2xl md:text-3xl font-bold text-blue-600 animate-blink 
+                   transition-all duration-300 group-hover:text-blue-700 mb-3">
+                    Click Here!
+                </p>
+                
+                <!-- Animated down arrow with stronger pointing motion -->
+                <div class="animate-point-down text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+                    </svg>
+                </div>
+                
+                <!-- Optional subtle pulse circle -->
+                <div class="absolute -z-10 w-20 h-20 rounded-full bg-blue-100 opacity-0 
+                           group-hover:opacity-100 transition-opacity duration-500 -mt-8"></div>
+            </div>
+            <a href="order.html" class="cta-button">SEE HOW IT WORKS</a>
+           
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            
+            <p>Natural Solutions for a Healthier Life</p>
+            <p>&copy; 2025 Herbal Healthcare Centre. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for the CTA button
+        document.querySelector('.cta-button').addEventListener('mouseover', function() {
+            this.style.transform = 'scale(1.05)';
+        });
+        
+        document.querySelector('.cta-button').addEventListener('mouseout', function() {
+            this.style.transform = 'scale(1)';
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+         // Initialize video player when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        const video = document.querySelector('video');
+        
+        // Try to autoplay (muted is required for most browsers)
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                // Auto-play was prevented, show controls
+                video.controls = true;
+                console.log('Auto-play prevented, showing controls');
+            });
+        }
+        
+        // Update progress bar and time display
+        video.addEventListener('timeupdate', updateProgressBar);
+        
+        // Click on video to toggle play/pause
+        video.addEventListener('click', function() {
+            toggleVideo(video);
+        });
+    });
+    
+    function toggleVideo(element) {
+        const video = element.closest('.group').querySelector('video');
+        if (video.paused) {
+            video.play();
+            element.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>`;
+        } else {
+            video.pause();
+            element.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+            </svg>`;
+        }
+    }
+    
+    function toggleMute(button) {
+        const video = button.closest('.group').querySelector('video');
+        video.muted = !video.muted;
+        button.innerHTML = video.muted ? 
+            `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/>
+            </svg>` :
+            `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M12 6a7.975 7.975 0 015.657 2.343m0 0a7.975 7.975 0 010 11.314m-11.314 0a7.975 7.975 0 010-11.314m0 0a7.975 7.975 0 015.657-2.343"/>
+            </svg>`;
+    }
+    
+    function toggleFullscreen(element) {
+        if (!document.fullscreenElement) {
+            element.requestFullscreen().catch(err => {
+                console.log(`Error attempting to enable fullscreen: ${err.message}`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    }
+    
+    function updateProgressBar() {
+        const video = document.querySelector('video');
+        const seekBar = document.querySelector('.seek-bar');
+        const timeDisplay = document.querySelector('.time-display');
+        
+        // Update seek bar
+        const value = (100 / video.duration) * video.currentTime;
+        seekBar.value = value;
+        
+        // Update time display
+        const minutes = Math.floor(video.currentTime / 60);
+        const seconds = Math.floor(video.currentTime - minutes * 60);
+        const durationMinutes = Math.floor(video.duration / 60);
+        const durationSeconds = Math.floor(video.duration - durationMinutes * 60);
+        
+        timeDisplay.textContent = 
+            `${minutes}:${seconds < 10 ? '0' : ''}${seconds} / ${durationMinutes}:${durationSeconds < 10 ? '0' : ''}${durationSeconds}`;
+    }
+    </script>
+</body>
+</html>
